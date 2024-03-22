@@ -1,0 +1,22 @@
+# brew install socket_vmnet lima
+
+# Based on template://ubuntu-lts
+# limactl start lima-ubuntu.yml --name default
+
+arch: "x86_64"
+images:
+# https://cloud-images.ubuntu.com/releases/22.04/release-20240308/ubuntu-22.04-server-cloudimg-amd64.img
+- location: "/Users/arash/Downloads/images/ubuntu-22.04-server-cloudimg-amd64.img"
+  arch: "x86_64"
+  digest: "sha256:42dcf9757e75c3275486b397a752fb535c7cd8e5232ee5ee349554b7a55f1702"
+
+mountType: 9p
+mounts:
+- location: "/Users/arash/Projects"
+  writable: true
+- location: "/Users/arash/Downloads"
+  writable: false
+
+containerd:
+  system: false
+  user: false

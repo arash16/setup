@@ -1,0 +1,34 @@
+# Shortcuts
+
+## TMux
+
+<prefix> C-c creates a new session
+<prefix> C-h and <prefix> C-l let you navigate windows (default <prefix> n and <prefix> p are unbound)
+<prefix> Tab brings you to the last active window
+<prefix> - splits the current pane vertically
+<prefix> _ splits the current pane horizontally
+<prefix> h, <prefix> j, <prefix> k and <prefix> l let you navigate panes ala Vim
+<prefix> H, <prefix> J, <prefix> K, <prefix> L let you resize panes
+<prefix> < and <prefix> > let you swap panes
+<prefix> + maximizes the current pane to a new window
+<prefix> U launches Urlscan (preferred) or Urlview, if available
+<prefix> Enter enters copy-mode
+<prefix> b lists the paste-buffers
+<prefix> p pastes from the top paste-buffer
+<prefix> P lets you choose the paste-buffer to paste from
+
+## Vim
+
+b/B back word/WORD
+w/W/e/E forward word/Word to start/end of word
+hjkl arrow keys
+x remove char
+y yank, copy to clipboard
+p paste
+u undo
+gg: start of file
+G: end of file
+ctrl+f forward page
+ctrl+b previous page
+ctrl+t tree view
+:Files -> fzf

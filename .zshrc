@@ -104,5 +104,5 @@ alias ll='lsd -l'
 alias lt='lsd --tree'
 alias lst='lsd -l --tree --total-size'
 man() {
-  vim -R +":set ft=man" +"Man $@" +IndentLinesToggle
+  vim -R +":set ft=man" +"Man $@"
 }

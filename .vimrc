@@ -1,32 +1,9 @@
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " apt install fonts-powerline ripgrep universal-ctags vim-gtk3
 
-runtime! ftplugin/man.vim
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/plugged')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'preservim/nerdtree'
-Plugin 'Yggdroot/indentLine'
-Plugin 'vim-airline/vim-airline'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/fzf'
-Plugin 'NLKNguyen/papercolor-theme'
-call vundle#end()
 filetype plugin indent on
-
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default': {
-  \       'transparent_background': 1
-  \     }
-  \   }
-  \ }
-set background=dark
-autocmd vimenter * ++nested colorscheme PaperColor
 
 syntax on
 set fileformat=unix
@@ -66,6 +43,30 @@ set noshowmode
 set termguicolors
 set clipboard=unnamed
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/plugged')
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'sheerun/vim-polyglot'
+  Plugin 'preservim/nerdtree'
+  Plugin 'Yggdroot/indentLine'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'arash16/vim-man2'
+  Plugin 'junegunn/fzf.vim'
+  Plugin 'junegunn/fzf'
+  Plugin 'NLKNguyen/papercolor-theme'
+call vundle#end()
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+set background=dark
+autocmd vimenter * ++nested colorscheme PaperColor
+
 " :PluginInstall
 nnoremap <C-t> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -84,4 +85,3 @@ let g:NERDTreeFileLines = 1
 
 let g:airline_powerline_fonts = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-

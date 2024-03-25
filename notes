@@ -2,6 +2,10 @@
 
 ## TMux
 
+F12 -> suspense
+<prefix> * -> kill
+<prefix> F -> search
+
 <prefix> C-c creates a new session
 <prefix> C-h and <prefix> C-l let you navigate windows (default <prefix> n and <prefix> p are unbound)
 <prefix> Tab brings you to the last active window

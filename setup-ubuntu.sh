@@ -49,6 +49,9 @@ if [[ ! -f "/tmp/arsh-pre" ]]; then
     gh_deb Arinerron/heaptrace '.*deb'
     gh_pull junegunn/fzf $HOME/.fzf
     $HOME/.fzf/install
+
+    sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+    sudo chmod +x /usr/bin/yq
   else
     if ! [ -x "$(command -v brew)" ]; then
       echo Homebrew not found
@@ -57,7 +60,7 @@ if [[ ! -f "/tmp/arsh-pre" ]]; then
 
     brew install \
       gdb xsel urlview vim tmux \
-      bat fd fzf ripgrep zoxide lsd jq httpie
+      bat fd fzf ripgrep zoxide lsd jq yq httpie
   fi
 
   touch /tmp/arsh-pre

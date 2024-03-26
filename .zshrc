@@ -103,6 +103,9 @@ alias la='lsd -laA'
 alias ll='lsd -l'
 alias lt='lsd --tree'
 alias lst='lsd -l --tree --total-size'
+
+alias td=todo.sh
+
 man() {
   vim -R +":set ft=man" +"Man $*"
 }

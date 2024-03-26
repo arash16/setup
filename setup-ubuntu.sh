@@ -52,6 +52,8 @@ if [[ ! -f "/tmp/arsh-pre" ]]; then
 
     sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
     sudo chmod +x /usr/bin/yq
+
+    wget https://raw.githubusercontent.com/todotxt/todo.txt-cli/master/todo.sh -O $HOME/.local/bin/todo.sh
   else
     if ! [ -x "$(command -v brew)" ]; then
       echo Homebrew not found
@@ -59,10 +61,11 @@ if [[ ! -f "/tmp/arsh-pre" ]]; then
     fi
 
     brew install \
-      gdb xsel urlview vim tmux \
+      gdb xsel urlview vim tmux todo-txt \
       bat fd fzf ripgrep zoxide lsd jq yq httpie
   fi
 
+  cp .todo.cfg ~
   touch /tmp/arsh-pre
 fi
 

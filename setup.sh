@@ -83,7 +83,6 @@ THEMES="$ZSH_CUSTOM/themes"
 mkdir -p $PLUGINS
 mkdir -p $THEMES
 gh_pull "zsh-users/zsh-autosuggestions" "$PLUGINS/zsh-autosuggestions" 
-gh_pull "zsh-users/zsh-syntax-highlighting" "$PLUGINS/zsh-syntax-highlighting" 
 gh_pull "zdharma-continuum/fast-syntax-highlighting" "$PLUGINS/fast-syntax-highlighting" 
 gh_pull "marlonrichert/zsh-autocomplete" "$PLUGINS/zsh-autocomplete" 
 gh_pull "romkatv/powerlevel10k" "$THEMES/powerlevel10k"
@@ -94,8 +93,16 @@ source ~/.zshrc
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 gh_pull asdf-vm/asdf "$HOME/.asdf"
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add rust https://github.com/asdf-community/asdf-rust.git
+asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
 # asdf install nodejs latest
+# asdf install golang latest
+# asdf install rust latest
+
 # asdf global nodejs latest
+# asdf global golang latest
+# asdf global rust latest
+
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add php https://github.com/asdf-community/asdf-php.git
 # asdf plugin add python https://github.com/asdf-community/asdf-python.git

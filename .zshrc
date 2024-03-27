@@ -4,9 +4,14 @@ PATH="$HOME/.local/bin:$PATH"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 export HOMEBREW_AUTO_UPDATE_SECS=604800 # 7 days
 export HOMEBREW_NO_ANALYTICS=1
-export ZSH="$HOME/.oh-my-zsh"
+
+export COLORTERM=truecolor
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_PLUG='z:autojump;f:fzcd;d:diffs;p:preview-tui;e:suedit'
+# getplugs / dups
 
 # Configure FZF
 export FZF_BASE=$(which fzf)
@@ -80,7 +85,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   fzf ripgrep z git asdf
-  zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting
+  zsh-autocomplete zsh-autosuggestions fast-syntax-highlighting
   docker docker-compose
 )
 source $ZSH/oh-my-zsh.sh

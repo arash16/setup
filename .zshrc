@@ -78,7 +78,11 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker fzf ripgrep zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlightingv)
+plugins=(
+  fzf ripgrep z git asdf
+  zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting
+  docker docker-compose
+)
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

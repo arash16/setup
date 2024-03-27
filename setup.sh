@@ -61,7 +61,7 @@ if [[ ! -f "/tmp/arsh-pre" ]]; then
     fi
 
     brew install \
-      gdb xsel urlview vim tmux todo-txt \
+      coreutils curl gdb xsel urlview vim tmux todo-txt \
       bat fd fzf ripgrep zoxide lsd jq yq httpie
   fi
 
@@ -88,9 +88,19 @@ gh_pull "zdharma-continuum/fast-syntax-highlighting" "$PLUGINS/fast-syntax-highl
 gh_pull "marlonrichert/zsh-autocomplete" "$PLUGINS/zsh-autocomplete" 
 gh_pull "romkatv/powerlevel10k" "$THEMES/powerlevel10k"
 cp -f .zshrc ~
+source ~/.zshrc
 
-###### Install nvm for nodejs ######
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+###### Install lang version manager ######
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+gh_pull asdf-vm/asdf "$HOME/.asdf"
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+# asdf install nodejs latest
+# asdf global nodejs latest
+# asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+# asdf plugin add php https://github.com/asdf-community/asdf-php.git
+# asdf plugin add python https://github.com/asdf-community/asdf-python.git
+# https://github.com/orgs/asdf-community/repositories?type=all
+
 
 ###### Config lsd ######
 mkdir -p ~/.config/lsd/

@@ -4,9 +4,9 @@ CURRENT_DIR=$PWD
 function cleanup {
   cd $CURRENT_DIR
 }
-# trap cleanup EXIT
+trap cleanup EXIT
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.asdf/bin:$PATH"
 export HOMEBREW_NO_AUTO_UPDATE=true
 git config --global core.compression 9
 
@@ -87,7 +87,6 @@ gh_pull "zdharma-continuum/fast-syntax-highlighting" "$PLUGINS/fast-syntax-highl
 gh_pull "marlonrichert/zsh-autocomplete" "$PLUGINS/zsh-autocomplete" 
 gh_pull "romkatv/powerlevel10k" "$THEMES/powerlevel10k"
 cp -f .zshrc ~
-source ~/.zshrc
 
 ###### Install lang version manager ######
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -129,19 +128,6 @@ tmux new-session -d
 sleep 1
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 tmux kill-server
-
-###### Configure pwn tools ######
-cd
-sudo gem install one_gadget
-pip install pwn capstone filebytes keystone-engine ropper pyvex shellen ROPgadget archinfo z3-solver
-
-mkdir ~/.gdb
-cd ~/.gdb
-git clone --depth=1 https://github.com/jerdna-regeiz/splitmind
-git clone --depth=1 https://github.com/pwndbg/pwndbg
-cd pwndbg
-./setup.sh
-cp -f .gdbinit ~
 
 # sudo sh -c "$(curl -fsSL https://get.docker.com)"
 # sudo usermod -aG docker $USER && newgrp docker

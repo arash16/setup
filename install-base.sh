@@ -35,7 +35,7 @@ if [[ ! -f "/tmp/arsh-pre" ]]; then
   if [[ "${OS}" == "Linux" ]]; then
     sudo apt-get -y update
     sudo apt-get -y install binutils cmake zsh build-essential python3-dev python3-pip \
-      ca-certificates curl xsel urlview vim vim-gtk3 tmux jq
+      ca-certificates curl xsel urlview vim vim-gtk3 tmux jq net-tools
     python3 -m pip install --upgrade setuptools pip
 
     # Install latest releases (debian releases are old)

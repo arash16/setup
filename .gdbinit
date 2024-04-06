@@ -21,3 +21,8 @@ set context-sections  "regs args code disasm stack backtrace"
 set context-stack-lines 15
 set context-clear-screen on
 set follow-fork-mode parent
+
+set history save on
+set history size 10000
+set history remove-duplicates 1
+set history filename ~/.gdb/.gdb_history

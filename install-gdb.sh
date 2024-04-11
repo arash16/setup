@@ -23,5 +23,8 @@ if [[ ! -z "$SSH_TTY" ]]; then
 cat > ~/.pwn.conf <<EOF
 [context]
 terminal=['tmux', 'neww']
+
+[update]
+interval=never
 EOF
 fi
